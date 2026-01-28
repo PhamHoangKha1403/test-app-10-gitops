@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-app-10
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: test-app-10
+  template:
+    metadata:
+      labels:
+        app: test-app-10
+    spec:
+      containers:
+        - name: app
+          image: phamhoangkha1403/test-app-11-service:2ef6a7bb8bbde87ee1c7fa17486de5ee8500ee68@sha256:512a3a9a5b2e2670e00c83bf269706d89f59e8de6c98da94f94c45db8437e1d9
+          ports:
+            - containerPort: 0
